@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label for="username">Username:</label>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    class="form-control"
+    placeholder="Scotex"
+    [(ngModel)]="username"
+    autocomplete="off"
+  />
+</div>
+<p>{{ username }}</p>
+<button class="btn btn-primary" [disabled]="!username" (click)="onReset()">
+  Reset
+</button>

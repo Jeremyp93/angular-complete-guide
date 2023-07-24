@@ -1,0 +1,12 @@
+<a
+  href="#"
+  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+>
+  <div>
+    <h4 class="mb-1">{{ recipe.name }}</h4>
+    <p class="mb-1">{{ recipe.description }}</p>
+  </div>
+  <span *ngIf="recipe.imagePath">
+    <img [src]="recipe.imagePath" alt="" class="recipe-image img-fluid" />
+  </span>
+</a>

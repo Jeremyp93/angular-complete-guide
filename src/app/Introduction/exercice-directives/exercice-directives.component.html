@@ -1,0 +1,16 @@
+<button class="btn btn-primary" (click)="onShowDetails()">
+  Display Details
+</button>
+<p *ngIf="flagDetails">
+  Today the temperature will be {{ temperature.toFixed(0) }} degrees Celcius
+</p>
+<ul>
+  <li
+    *ngFor="let log of logs; let indexOfelement = index"
+    [ngStyle]="{ backgroundColor: getBackgroundColor(indexOfelement) }"
+  >
+    <span [ngClass]="{ 'color-white': getColorClass(indexOfelement) }">
+      {{ log }}
+    </span>
+  </li>
+</ul>
