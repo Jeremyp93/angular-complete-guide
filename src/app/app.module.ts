@@ -15,6 +15,10 @@ import { HeaderComponent } from './header/header.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { GameControlComponent } from './Introduction/exercice-data-binding/game-control/game-control.component';
+import { OddComponent } from './Introduction/exercice-data-binding/odd/odd.component';
+import { EvenComponent } from './Introduction/exercice-data-binding/even/even.component';
+import { GameComponent } from './Introduction/exercice-data-binding/game/game.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ShoppingListComponent,
     ShoppingListEditComponent,
     HeaderComponent,
-    RecipeBookComponent
+    RecipeBookComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<app-game-control
+  (intervalEvent)="intervalSet($event)"
+  (intervalStopped)="clearArray()"
+></app-game-control>
+<ng-container *ngFor="let number of numbers">
+  <app-even *ngIf="number % 2 == 0; else oddBlock" [number]="number"></app-even>
+  <ng-template #oddBlock>
+    <app-odd [number]="number"></app-odd>
+  </ng-template>
+</ng-container>

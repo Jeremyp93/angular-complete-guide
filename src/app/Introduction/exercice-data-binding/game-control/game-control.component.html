@@ -1,0 +1,26 @@
+<div class="d-flex">
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="onStartGame()"
+    [disabled]="startDisabled"
+  >
+    Start
+  </button>
+  <button
+    type="button"
+    class="btn btn-warning"
+    (click)="onPauseGame()"
+    [disabled]="pauseDisabled"
+  >
+    Pause
+  </button>
+  <button
+    type="button"
+    class="btn btn-danger"
+    (click)="onStopGame()"
+    [disabled]="i === 0"
+  >
+    Stop
+  </button>
+</div>
