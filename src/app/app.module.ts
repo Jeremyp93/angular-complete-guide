@@ -19,6 +19,9 @@ import { GameControlComponent } from './Introduction/exercice-data-binding/game-
 import { OddComponent } from './Introduction/exercice-data-binding/odd/odd.component';
 import { EvenComponent } from './Introduction/exercice-data-binding/even/even.component';
 import { GameComponent } from './Introduction/exercice-data-binding/game/game.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { ActiveUsersComponent } from './Introduction/exercice-services/active-users/active-users.component';
+import { InactiveUsersComponent } from './Introduction/exercice-services/inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { GameComponent } from './Introduction/exercice-data-binding/game/game.co
     GameControlComponent,
     OddComponent,
     EvenComponent,
-    GameComponent
+    GameComponent,
+    DropdownDirective,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
