@@ -24,6 +24,7 @@ import { ActiveUsersComponent } from './Introduction/exercice-services/active-us
 import { InactiveUsersComponent } from './Introduction/exercice-services/inactive-users/inactive-users.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.co
     DropdownDirective,
     ActiveUsersComponent,
     InactiveUsersComponent,
-    RecipeStartComponent
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
