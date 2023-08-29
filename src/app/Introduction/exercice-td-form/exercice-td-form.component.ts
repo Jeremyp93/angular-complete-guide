@@ -8,8 +8,11 @@ import { NgForm } from '@angular/forms';
 })
 export class ExerciceTdFormComponent {
   subscription: string = 'advanced';
+  result: {email: string, subscription: string, password: string};
 
   onSubmit = (form: NgForm): void => {
-    console.log(form);
+    console.log(form.value);
+    this.result = {email: form.value.email, subscription: form.value.subscription, password: form.value.password}
+    form.reset({subscription: this.subscription});
   }
 }
