@@ -5,6 +5,7 @@
             <div class="mb-3">
                 <label for="email">Email</label>
                 <input name="email" id="email" required email class="form-control" ngModel />
+                <div class="form-text error">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="subscription">Subscription</label>
@@ -17,6 +18,7 @@
             <div class="mb-3">
                 <label for="password">Password</label>
                 <input name="password" id="password" required class="form-control" ngModel />
+                <div class="form-text error">We'll never share your email with anyone else.</div>
             </div>
             <div *ngIf="form.invalid && form.touched" class="alert alert-danger" role="alert">
                 Please correct the form before submitting it !
