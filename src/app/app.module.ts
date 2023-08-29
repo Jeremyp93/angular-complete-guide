@@ -25,6 +25,7 @@ import { InactiveUsersComponent } from './Introduction/exercice-services/inactiv
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
+import { ExerciceTdFormComponent } from './Introduction/exercice-td-form/exercice-td-form.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.compo
     ActiveUsersComponent,
     InactiveUsersComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    ExerciceTdFormComponent
   ],
   imports: [
     BrowserModule,
