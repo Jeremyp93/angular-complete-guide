@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -26,6 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 import { ExerciceTdFormComponent } from './Introduction/exercice-td-form/exercice-td-form.component';
+import { ExerciceReactiveFormComponent } from './Introduction/exercice-reactive-form/exercice-reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ExerciceTdFormComponent } from './Introduction/exercice-td-form/exercic
     InactiveUsersComponent,
     RecipeStartComponent,
     RecipeEditComponent,
-    ExerciceTdFormComponent
+    ExerciceTdFormComponent,
+    ExerciceReactiveFormComponent
   ],
   imports: [
     BrowserModule,
