@@ -58,7 +58,8 @@ import { ExerciceReactiveFormComponent } from './Introduction/exercice-reactive-
     BrowserModule,
     FormsModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
