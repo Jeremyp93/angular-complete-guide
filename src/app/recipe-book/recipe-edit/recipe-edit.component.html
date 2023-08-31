@@ -1,2 +1,97 @@
-<h2 *ngIf="editMode">We can edit recipe {{ recipe.name }}</h2>
-<h2 *ngIf="!editMode">We can create a new recipe</h2>
+<div class="row">
+  <div class="col-12">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12">
+          <button
+            class="btn btn-success"
+            type="submit"
+            [disabled]="recipeForm.invalid"
+          >
+            Save
+          </button>
+          <button class="btn btn-danger" type="button" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="imagePath">Image URL</label>
+        <input
+          type="text"
+          id="imagePath"
+          class="form-control"
+          formControlName="imagePath"
+        />
+      </div>
+      <div class="mb-3">
+        <img
+          [src]="recipeForm.get('imagePath').value"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          class="form-control"
+          rows="6"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="mb-3" formArrayName="ingredients">
+        <span>Ingredients</span>
+        <div
+          class="mb-3"
+          *ngFor="let ingredientControl of ingredientControls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="row">
+            <div class="col-8">
+              <input type="text" class="form-control" formControlName="name" />
+            </div>
+            <div class="col-2">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="amount"
+              />
+            </div>
+            <div class="col-2">
+              <button
+                class="btn btn-danger"
+                type="button"
+                (click)="onDeleteIngredient(i)"
+              >
+                X
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-12">
+            <button
+              class="btn btn-primary"
+              type="button"
+              (click)="onAddIngredient()"
+            >
+              Add ingredient
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
