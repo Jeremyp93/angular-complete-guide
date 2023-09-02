@@ -27,6 +27,9 @@ import { RecipeStartComponent } from './recipe-book/recipe-start/recipe-start.co
 import { RecipeEditComponent } from './recipe-book/recipe-edit/recipe-edit.component';
 import { ExerciceTdFormComponent } from './Introduction/exercice-td-form/exercice-td-form.component';
 import { ExerciceReactiveFormComponent } from './Introduction/exercice-reactive-form/exercice-reactive-form.component';
+import { ExercicePipesComponent } from './Introduction/exercice-pipes/exercice-pipes.component';
+import { ReversePipe } from './Introduction/exercice-pipes/reverse.pipe';
+import { SortPipe } from './Introduction/exercice-pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { ExerciceReactiveFormComponent } from './Introduction/exercice-reactive-
     RecipeStartComponent,
     RecipeEditComponent,
     ExerciceTdFormComponent,
-    ExerciceReactiveFormComponent
+    ExerciceReactiveFormComponent,
+    ExercicePipesComponent,
+    ReversePipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
