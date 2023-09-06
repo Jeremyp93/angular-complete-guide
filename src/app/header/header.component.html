@@ -37,8 +37,12 @@
             Manage
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item pointer">Save Data</a>
-            <a class="dropdown-item pointer">Fetch Data</a>
+            <a class="dropdown-item pointer" (click)="storeRecipes()"
+              >Save Data</a
+            >
+            <a class="dropdown-item pointer" (click)="retrieveRecipes()"
+              >Fetch Data</a
+            >
           </div>
         </li>
       </ul>
