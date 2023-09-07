@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { WarningAlertComponent } from './Introduction/warning-alert/warning-alert.component';
@@ -31,6 +31,9 @@ import { ExerciceReactiveFormComponent } from './Introduction/exercice-reactive-
 import { ExercicePipesComponent } from './Introduction/exercice-pipes/exercice-pipes.component';
 import { ReversePipe } from './Introduction/exercice-pipes/reverse.pipe';
 import { SortPipe } from './Introduction/exercice-pipes/sort.pipe';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { DataStorageInterceptorService } from './shared/data-storage-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,9 @@ import { SortPipe } from './Introduction/exercice-pipes/sort.pipe';
     ExerciceReactiveFormComponent,
     ExercicePipesComponent,
     ReversePipe,
-    SortPipe
+    SortPipe,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,7 @@ import { SortPipe } from './Introduction/exercice-pipes/sort.pipe';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: DataStorageInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
