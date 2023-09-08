@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userSub = this.authService.user.subscribe(user => {
       this.isLoggedIn = !!user;
       console.log(this.isLoggedIn);
-    })
+    });
   }
 
   storeRecipes = () => {
