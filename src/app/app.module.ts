@@ -34,6 +34,8 @@ import { SortPipe } from './Introduction/exercice-pipes/sort.pipe';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { DataStorageInterceptorService } from './shared/data-storage-interceptor.service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { DataStorageInterceptorService } from './shared/data-storage-interceptor
     ReversePipe,
     SortPipe,
     AuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
