@@ -1,32 +1,15 @@
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-
-import { RecipeBookComponent } from "./recipe-book/recipe-book.component";
-import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
-import { RecipeDetailComponent } from "./recipe-book/recipe-detail/recipe-detail.component";
-import { RecipeStartComponent } from "./recipe-book/recipe-start/recipe-start.component";
-import { RecipeEditComponent } from "./recipe-book/recipe-edit/recipe-edit.component";
-import { RecipeBookResolverService } from "./recipe-book/recipe-book-resolver.service";
-import { AuthComponent } from "./auth/auth.component";
-import { authGuard } from "./auth/auth.guard";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
     { path: '', redirectTo: 'recipe-book', pathMatch: 'full' },
-    {
-        path: 'recipe-book', component: RecipeBookComponent, canActivate: [authGuard], children: [
-            { path: '', component: RecipeStartComponent, pathMatch: 'full' },
-            { path: 'new', component: RecipeEditComponent },
-            { path: ':id', component: RecipeDetailComponent, resolve: [RecipeBookResolverService] },
-            { path: ':id/edit', component: RecipeEditComponent, resolve: [RecipeBookResolverService] }
-        ]
-    },
-    { path: 'shopping-list', component: ShoppingListComponent },
-    { path: 'auth', component: AuthComponent },
-    { path: '**', redirectTo: 'recipe-book' }
+    { path: 'recipe-book', loadChildren: () => import('./recipe-book/recipe-book.module').then(m => m.RecipeBookModule) },
+    { path: 'shopping-list', loadChildren: () => import('./shopping-list/shopping-list.module').then(m => m.ShoppingListModule) },
+    { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) }
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
